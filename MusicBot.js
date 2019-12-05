@@ -14,6 +14,8 @@ client.on('warn', console.warn);
 client.on('error', console.error);
 
 client.on('ready', () => console.log('Yo this ready!'));
+client.user.setActivity('CooL Songz', {type: 'LISTENING'});
+});
 
 client.on('disconnect', () => console.log('I just disconnected, making sure you know, I will reconnect now...'));
 
@@ -195,4 +197,4 @@ function play(guild, song) {
 	serverQueue.textChannel.send(`🎶 Start playing: **${song.title}**`);
 }
 
-client.login(TOKEN);
+client.login(process.env.token);
